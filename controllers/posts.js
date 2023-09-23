@@ -30,6 +30,12 @@ function create(req, res) {
 function show(req, res) {
   Post.findById(req.params.postId)
   .populate('author')
+  .populate({
+    path: 'replies',
+    populate: {
+      path: 'author',
+    }
+  })
   .then(post => {
     res.render('posts/show', {
       post,
@@ -42,8 +48,29 @@ function show(req, res) {
   })
 }
 
+function createReply(req, res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    req.body.author = req.user.profile._id
+    post.replies.push(req.body)
+    post.save()
+    .then(() => {
+      res.redirect(`/posts/${req.params.postId}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/posts/${req.params.postId}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/posts/${req.params.postId}`)
+  })
+}
+
 export {
   index,
   create,
-  show
+  show,
+  createReply
 }

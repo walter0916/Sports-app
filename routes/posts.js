@@ -7,6 +7,7 @@ const router = Router()
 router.get('/', postCtrl.index)
 router.get('/:postId', postCtrl.show)
 router.post('/', isLoggedIn, postCtrl.create)
+router.post('/:postId/replies', isLoggedIn, postCtrl.createReply)
 
 export {
   router
