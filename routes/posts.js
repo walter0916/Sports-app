@@ -5,6 +5,7 @@ import * as postCtrl from '../controllers/posts.js'
 const router = Router()
 
 router.get('/', postCtrl.index)
+router.post('/', isLoggedIn, postCtrl.create)
 
 export {
   router

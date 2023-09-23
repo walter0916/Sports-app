@@ -26,8 +26,8 @@
     <ul>
       <% posts.forEach(post => { %>
         <li>
-          <h3><%= posts.author.avatar %></h3>
-          <p><%= posts.content %></p>
+          <h3><%= post.author.name %></h3>
+          <p><%= post.content %></p>
         </li>
       <% }) %>
     </ul>
