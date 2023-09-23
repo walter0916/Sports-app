@@ -27,7 +27,23 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Post.findById(req.params.postId)
+  .populate('author')
+  .then(post => {
+    res.render('posts/show', {
+      post,
+      title: 'All replies'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
 export {
   index,
-  create
+  create,
+  show
 }
