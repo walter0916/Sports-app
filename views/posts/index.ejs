@@ -1,0 +1,37 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <% if (user?.profile.avatar) { %>
+    <div>
+      <img
+        src="<%= user.profile.avatar %>"
+        alt="<%= user.profile.name %> avatar"
+      />
+    </div>
+    <% } %>
+    <section>
+      <% if (user) { %>
+        <h2>Add a post</h2>
+        <form action="/posts" method="POST">
+          <label for="textbox">Enter Text:</label>
+          <input type="text" name="content" id="textbox">
+          <button type="submit"> Post </button>
+        </form>     
+      <% } %>
+    </section>
+    <section>
+    <h2>Sports Forum</h2>
+    <ul>
+      <% posts.forEach(post => { %>
+        <li>
+          <h3><%= posts.author.avatar %></h3>
+          <p><%= posts.content %></p>
+        </li>
+      <% }) %>
+    </ul>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
