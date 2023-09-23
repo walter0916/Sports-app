@@ -1,0 +1,45 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <% if (user?.profile.avatar) { %>
+    <div>
+      <img
+        src="<%= user.profile.avatar %>"
+        alt="<%= user.profile.name %> avatar"
+      />
+    </div>
+  <% } %>
+  <section>
+    <h1>Author: <%= post.author.name %></h1>
+    <h1><%= post.content %></h1>
+  </section>
+  <section>
+    <% if (post.replies.length) { %>
+      <form action="/posts/<%= post._id %>/replies" method="POST">
+        <label for="textbox">Enter Text:</label>
+        <input type="text" id="textbox" name="content">
+        <button type="submit">Post Reply</button>
+      </form>
+      <ul>
+        <% post.replies.forEach(reply => { %>
+          <li>
+            <h3>reply by <%= reply.author.name %></h3>
+            <p><%= reply.content %></p>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <h3>Be the first to reply</h2>
+        <form action="/posts/<%= post._id %>/replies" method="POST">
+          <label for="textbox">Enter Text:</label>
+          <input type="text" name="content" id="textbox">
+          <button type="submit">Post Reply</button>
+        </form>
+    <% } %>
+     
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
