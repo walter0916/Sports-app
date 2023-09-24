@@ -8,6 +8,7 @@ router.get('/:profileId', profilesCtrl.show)
 router.get('/:profileId/favoriteplayer', isLoggedIn, profilesCtrl.favoritePlayerForm)
 router.get('/:profileId/favoriteteam', isLoggedIn, profilesCtrl.favoriteTeamForm)
 router.post('/:profileId/favoriteplayer', isLoggedIn, profilesCtrl.createFavoritePlayer)
+router.post('/:profileId/favoriteteam', isLoggedIn, profilesCtrl.createFavoriteTeam)
 
 export {
   router

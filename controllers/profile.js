@@ -55,10 +55,29 @@ function createFavoritePlayer(req, res) {
   })
 }
 
+function createFavoriteTeam(req, res) {
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.favoriteteam.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profile/${req.user.profile._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/profile/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profile/${req.user.profile._id}`)
+  })
+}
 
 export {
   show,
   favoritePlayerForm,
   createFavoritePlayer,
-  favoriteTeamForm
+  favoriteTeamForm,
+  createFavoriteTeam
 }
