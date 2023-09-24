@@ -16,12 +16,16 @@
     <h1><%= post.content %></h1>
   </section>
   <section>
-    <% if (post.replies.length) { %>
+    <% if (user) { %>
       <form action="/posts/<%= post._id %>/replies" method="POST">
         <label for="textbox">Enter Text:</label>
-        <input type="text" id="textbox" name="content">
+        <input type="text" name="content" id="textbox">
         <button type="submit">Post Reply</button>
       </form>
+    <% } %>
+  </section>
+  <section>
+    <% if (post.replies.length) { %>
       <ul>
         <% post.replies.forEach(reply => { %>
           <li>
@@ -32,13 +36,7 @@
       </ul>
     <% } else { %>
       <h3>Be the first to reply</h2>
-        <form action="/posts/<%= post._id %>/replies" method="POST">
-          <label for="textbox">Enter Text:</label>
-          <input type="text" name="content" id="textbox">
-          <button type="submit">Post Reply</button>
-        </form>
-    <% } %>
-     
+    <% } %>    
   </section>
 </main>
 
