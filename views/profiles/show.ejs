@@ -19,10 +19,11 @@
         <li>
           <h2><%= player.name %></h2>
           <p><%= `${player.name} is a ${player.sport} player` %></p>
-          <p><%= `they are ${player.age} years old and play for ${player.name}` %></p>
+          <p><%= `They are ${player.age} years old and play for ${player.team}` %></p>
         </li>
         <% }) %>
       </ul>
+      <a href="/profile/<%= user.profile._id %>/favoriteplayer"><button>Add more favorite players</button></a>
     <% } else { %>
       <h2>No favorite players added</h2>
       <a href="/profile/<%= user.profile._id %>/favoriteplayer"><button>Add favorite players</button></a>

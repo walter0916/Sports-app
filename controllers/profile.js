@@ -26,7 +26,27 @@ function favoritePlayerForm(req, res) {
   })
 }
 
+function createFavoritePlayer(req, res) {
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.favoriteplayer.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profile/${req.user.profile._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/profile/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profile/${req.user.profile._id}`)
+  })
+}
+
 export {
   show,
-  favoritePlayerForm
+  favoritePlayerForm,
+  createFavoritePlayer
 }
