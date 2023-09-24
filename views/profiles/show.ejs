@@ -40,6 +40,7 @@
           </li>
         <% }) %>
       </ul>
+      <a href="/profile/<%= user.profile._id %>/favoriteteam"><button>Add more favorite teams</button></a>
     <% } else { %>
       <h2>No favorite teams added</h2>
       <a href="/profile/<%= user.profile._id %>/favoriteteam"><button>Add favorite teams</button></a>

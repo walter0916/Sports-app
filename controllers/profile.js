@@ -26,6 +26,16 @@ function favoritePlayerForm(req, res) {
   })
 }
 
+function favoriteTeamForm(req, res) {
+  res.render('favoriteteam/form', {
+    title: "New Favorite team"
+  })
+.catch(err => {
+  console.log(err)
+  res.redirect(`/profile/${user.profile._id}`)
+})
+}
+
 function createFavoritePlayer(req, res) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
@@ -45,8 +55,10 @@ function createFavoritePlayer(req, res) {
   })
 }
 
+
 export {
   show,
   favoritePlayerForm,
-  createFavoritePlayer
+  createFavoritePlayer,
+  favoriteTeamForm
 }
