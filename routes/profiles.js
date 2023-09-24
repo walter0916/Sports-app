@@ -1,11 +1,10 @@
 import { Router } from 'express'
 import { isLoggedIn } from '../middleware/middleware.js'
+import * as profilesCtrl from '../controllers/profile.js'
 
 const router = Router()
 
-router.get('/', function (req, res) {
-  res.render('index', { title: 'Home Page' })
-})
+router.get('/', profilesCtrl.index)
 
 export {
   router
