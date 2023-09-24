@@ -5,6 +5,7 @@ import * as profilesCtrl from '../controllers/profile.js'
 const router = Router()
 
 router.get('/:profileId', profilesCtrl.show)
+router.get('/:profileId/favoriteplayer', isLoggedIn, profilesCtrl.favoritePlayerForm)
 
 export {
   router

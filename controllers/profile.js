@@ -16,6 +16,17 @@ function show(req, res) {
   })
 }
 
+function favoritePlayerForm(req, res) {
+    res.render('favoriteplayer/form', {
+      title: "New Favorite player"
+    })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profile/${user.profile._id}`)
+  })
+}
+
 export {
-  show
+  show,
+  favoritePlayerForm
 }
