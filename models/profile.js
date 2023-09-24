@@ -14,7 +14,7 @@ const favoritePlayerSchema = new Schema({
 const favoriteTeamSchema = new Schema({
   name: String, 
   sport: String, 
-  achievments: String, 
+  achievements: String, 
   topPlayers: String,
 })
 
