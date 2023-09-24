@@ -22,7 +22,7 @@ const profileSchema = new Schema({
   name: String,
   avatar: String,
   favoriteplayer: [favoritePlayerSchema],
-  favortieteam: [favoriteTeamSchema]
+  favoriteteam: [favoriteTeamSchema]
 }, {
   timestamps: true
 })

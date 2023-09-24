@@ -1,0 +1,47 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <% if (user?.profile.avatar) { %>
+    <div>
+      <img
+        src="<%= user.profile.avatar %>"
+        alt="<%= user.profile.name %> avatar"
+      />
+    </div>
+  <% } %>
+  <section>
+    <% if (profile.favoriteplayer.length) { %>
+      <h1>Favorite players</h1>
+      <ul>
+        <% profile.favoriteplayer.forEach(player => { %>
+        <li>
+          <h2><%= player.name %></h2>
+          <p><%= `${player.name} is a ${player.sport} player` %></p>
+          <p><%= `they are ${player.age} years old and play for ${player.name}` %></p>
+        </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <h2>No favorite players added</h2>
+    <% } %>
+  </section>
+  <section>
+    <% if (profile.favoriteteam.length) { %>
+      <h1>Favorite Teams</h1>
+      <ul>
+        <% profile.favoriteteam.forEach(team => { %>
+          <li>
+            <h2><%= team.name %></h2>
+            <p><%= `${team.name} is a ${team.sport} team` %></p>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <h2>No favorite teams added</h2>
+    <% } %>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
