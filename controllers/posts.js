@@ -85,7 +85,7 @@ function createReply(req, res) {
 function editReply(req, res) {
   Post.findById(req.params.postId)
   .then(post => {
-    const reply = post.replies.id(req.params.repliesId)
+    const reply = post.replies.id(req.params.replyId)
     res.render('replies/edit', {
       post,
       reply,
