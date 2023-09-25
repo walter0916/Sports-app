@@ -31,6 +31,12 @@
           <li>
             <h3>reply by <%= reply.author.name %></h3>
             <p><%= reply.content %></p>
+            <% if (reply.author.equals(user?.profile._id)) { %>
+              <a href="/posts/<%= post._id %>/replies/<%= reply._id %>/edit"><button>edit</button></a>
+              <form action="">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
           </li>
         <% }) %>
       </ul>
