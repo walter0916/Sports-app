@@ -5,7 +5,7 @@ function index(req, res) {
   .populate('author')
   .then(posts => {
     res.render('posts/index', {
-      posts, 
+      posts,
       title: 'all posts'
     })
   })
