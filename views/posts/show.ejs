@@ -33,7 +33,7 @@
             <p><%= reply.content %></p>
             <% if (reply.author.equals(user?.profile._id)) { %>
               <a href="/posts/<%= post._id %>/replies/<%= reply._id %>/edit"><button>edit</button></a>
-              <form action="">
+              <form action="/posts/<%= post._id %>/replies/<%= reply._id %>/?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
             <% } %>

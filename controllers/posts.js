@@ -158,6 +158,30 @@ function deletePost(req, res) {
   })
 }
 
+function deleteReply(req, res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    const reply = post.replies.id(req.params.replyId)
+    if (reply.author.equals(req.user.profile._id)){
+      post.replies.remove(reply)
+      post.save()
+      .then(() => {
+        res.redirect(`/posts/${post._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect(`/posts/${post._id}`)
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
 export {
   index,
   create,
@@ -167,5 +191,6 @@ export {
   update,
   deletePost,
   editReply,
-  updateReply
+  updateReply,
+  deleteReply
 }
