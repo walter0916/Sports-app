@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <% if (user?.profile.avatar) { %>
+    <div>
+      <img
+        src="<%= user.profile.avatar %>"
+        alt="<%= user.profile.name %> avatar"
+      />
+    </div>
+  <% } %>
+  <section>
+    <form action="/profile/<%= user.profile._id %>/favoriteteam/<%= team._id %>?_method=PUT" method="POST">
+    <label for="name-input">Name:</label>
+    <input type="text" name="name" id="name-input" value="<%= team.name %>">
+    <label for="sport">Sport:</label>
+    <input type="text" name="sport" id="sport-input" value="<%= team.sport %>">
+    <label for="achievements">Achievements:</label>
+    <input type="text" name="achievements" id="achievements" value="<%= team.achievements %>">
+    <label for="topPlayers-input">TopPlayers:</label>
+    <input type="text" name="topPlayers" id="TopPlayers-input" value="<%= team.topPlayers %>">
+    <button type="submit">Update Team</button>
+    </form>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
