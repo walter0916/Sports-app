@@ -9,6 +9,7 @@ router.get('/:postId', postCtrl.show)
 router.get('/:postId/edit', isLoggedIn, postCtrl.edit)
 router.post('/', isLoggedIn, postCtrl.create)
 router.post('/:postId/replies', isLoggedIn, postCtrl.createReply)
+router.put('/:postId', isLoggedIn, postCtrl.update)
 
 export {
   router
