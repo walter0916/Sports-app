@@ -46,7 +46,7 @@
             <p><%= `Their Achievements: ${team.achievements}` %></p>
             <p><%= `Their Top Players: ${team.topPlayers}` %></p>
             <% if (isSelf) { %>
-              <a href="/profile/<%= user.profile._id %>/favoriteteam/<%= team._id %>">
+              <a href="/profile/<%= user.profile._id %>/favoriteteam/<%= team._id %>/edit">
                 <button>edit</button>
               </a>
               <button>X</button>
