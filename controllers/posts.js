@@ -116,6 +116,30 @@ function update(req, res) {
   })
 }
 
+function updateReply(req, res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    const reply = post.replies.id(req.params.replyId)
+    if (reply.author.equals(req.user.profile._id)){
+      reply.set(req.body)
+      post.save()
+      .then(() => {
+        res.redirect(`/posts/${post._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect(`/posts/${post._id}`)
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
 function deletePost(req, res) {
   Post.findById(req.params.postId)
   .then(post => {
@@ -142,5 +166,6 @@ export {
   edit,
   update,
   deletePost,
-  editReply
+  editReply,
+  updateReply
 }

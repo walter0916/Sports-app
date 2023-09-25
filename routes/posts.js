@@ -11,6 +11,7 @@ router.get('/:postId/replies/:replyId/edit', isLoggedIn, postCtrl.editReply)
 router.post('/', isLoggedIn, postCtrl.create)
 router.post('/:postId/replies', isLoggedIn, postCtrl.createReply)
 router.delete('/:postId', isLoggedIn, postCtrl.deletePost)
+router.put('/:postId/replies/:replyId', isLoggedIn, postCtrl.updateReply)
 router.put('/:postId', isLoggedIn, postCtrl.update)
 
 export {
