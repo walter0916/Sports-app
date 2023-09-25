@@ -106,12 +106,36 @@ function editFavoriteTeam(req, res) {
   })
 }
 
-function updateplayer(req, res) {
+function updatePlayer(req, res) {
   Profile.findById(req.params.profileId)
   .then(profile => {
     const player = profile.favoriteplayer.id(req.params.favoriteplayerId)
     if (profile._id.equals(req.user.profile._id)){
       player.set(req.body)
+      profile.save()
+      .then(() => {
+        res.redirect(`/profile/${profile._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect(`/profile/${profile._id}`)
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
+function updateTeam(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const team = profile.favoriteteam.id(req.params.favoriteteamId)
+    if (profile._id.equals(req.user.profile._id)){
+      team.set(req.body)
       profile.save()
       .then(() => {
         res.redirect(`/profile/${profile._id}`)
@@ -137,6 +161,7 @@ export {
   favoriteTeamForm,
   createFavoriteTeam,
   editFavoritePlayer,
-  updateplayer,
-  editFavoriteTeam
+  updatePlayer,
+  editFavoriteTeam,
+  updateTeam
 }
