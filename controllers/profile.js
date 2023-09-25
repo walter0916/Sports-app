@@ -74,10 +74,25 @@ function createFavoriteTeam(req, res) {
   })
 }
 
+function editFavoritePlayer(req, res) {
+  Profile.findById(req.user.profile._id)
+  .then ( profile => {
+    res.render('favoriteplayer/edit', {
+      profile,
+      title: 'edit player'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profile/${req.user.profile._id}`)
+  })
+}
+
 export {
   show,
   favoritePlayerForm,
   createFavoritePlayer,
   favoriteTeamForm,
-  createFavoriteTeam
+  createFavoriteTeam,
+  editFavoritePlayer
 }
