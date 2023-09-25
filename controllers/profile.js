@@ -77,8 +77,10 @@ function createFavoriteTeam(req, res) {
 function editFavoritePlayer(req, res) {
   Profile.findById(req.user.profile._id)
   .then ( profile => {
+    const player = profile.favoriteplayer.id(req.params.favoriteplayerId)
     res.render('favoriteplayer/edit', {
       profile,
+      player,
       title: 'edit player'
     })
   })

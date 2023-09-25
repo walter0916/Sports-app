@@ -21,7 +21,7 @@
           <p><%= `${player.name} is a ${player.sport} player` %></p>
           <p><%= `They are ${player.age} years old and play for ${player.team}` %></p>
           <% if (isSelf) { %>
-            <a href="/profile/<%= user.profile._id %>/favoriteplayer/edit">
+            <a href="/profile/<%= user.profile._id %>/favoriteplayer/<%= player._id %>/edit">
               <button>edit</button>
             </a>
             <button>X</button>
@@ -46,7 +46,7 @@
             <p><%= `Their Achievements: ${team.achievements}` %></p>
             <p><%= `Their Top Players: ${team.topPlayers}` %></p>
             <% if (isSelf) { %>
-              <a href="/profile/<%= user.profile._id %>/favoriteteam/edit">
+              <a href="/profile/<%= user.profile._id %>/favoriteteam/<%= team._id %>">
                 <button>edit</button>
               </a>
               <button>X</button>
