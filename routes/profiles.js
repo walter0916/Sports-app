@@ -11,6 +11,7 @@ router.get('/:profileId/favoriteplayer/:favoriteplayerId/edit', isLoggedIn, prof
 router.get('/:profileId/favoriteteam/:favoriteteamId/edit', isLoggedIn, profilesCtrl.editFavoriteTeam)
 router.post('/:profileId/favoriteplayer', isLoggedIn, profilesCtrl.createFavoritePlayer)
 router.post('/:profileId/favoriteteam', isLoggedIn, profilesCtrl.createFavoriteTeam)
+router.delete('/:profileId/favoriteteam/:favoriteteamId', isLoggedIn, profilesCtrl.deleteTeam)
 router.put('/:profileId/favoriteplayer/:favoriteplayerId', isLoggedIn, profilesCtrl.updatePlayer)
 router.put('/:profileId/favoriteteam/:favoriteteamId', isLoggedIn, profilesCtrl.updateTeam)
 

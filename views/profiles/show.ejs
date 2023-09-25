@@ -49,7 +49,9 @@
               <a href="/profile/<%= user.profile._id %>/favoriteteam/<%= team._id %>/edit">
                 <button>edit</button>
               </a>
-              <button>X</button>
+              <form action="/profile/<%= user.profile._id %>/favoriteteam/<%= team._id %>/?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
             <% } %>
           </li>
         <% }) %>

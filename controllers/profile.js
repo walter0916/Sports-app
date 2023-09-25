@@ -154,6 +154,30 @@ function updateTeam(req, res) {
   })
 }
 
+function deleteTeam(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const team = profile.favoriteteam.id(req.params.favoriteteamId)
+    if (profile._id.equals(req.user.profile._id)){
+      profile.favoriteteam.remove(team)
+      profile.save()
+      .then(() => {
+        res.redirect(`/profile/${profile._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect(`/profile/${profile._id}`)
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
 export {
   show,
   favoritePlayerForm,
@@ -163,5 +187,6 @@ export {
   editFavoritePlayer,
   updatePlayer,
   editFavoriteTeam,
-  updateTeam
+  updateTeam,
+  deleteTeam
 }
