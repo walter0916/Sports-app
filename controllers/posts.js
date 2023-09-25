@@ -82,6 +82,22 @@ function createReply(req, res) {
   })
 }
 
+function editReply(req, res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    const reply = post.replies.id(req.params.repliesId)
+    res.render('replies/edit', {
+      post,
+      reply,
+      title: 'Edit Reply'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/posts/${req.params.postId}`)
+  })
+}
+
 function update(req, res) {
   Post.findById(req.params.postId)
   .then(post => {
@@ -125,5 +141,6 @@ export {
   createReply,
   edit,
   update,
-  deletePost
+  deletePost,
+  editReply
 }
