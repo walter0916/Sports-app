@@ -100,11 +100,30 @@ function update(req, res) {
   })
 }
 
+function deletePost(req, res) {
+  Post.findById(req.params.postId)
+  .then(post => {
+    if (post.author.equals(req.user.profile._id)) {
+      post.deleteOne()
+      .then(() => {
+        res.redirect('/posts')
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
 export {
   index,
   create,
   show,
   createReply,
   edit,
-  update
+  update,
+  deletePost
 }

@@ -31,6 +31,9 @@
           <button type="button"><a href="/posts/<%= post._id %>">See all replies</a></button>
           <% if (post.author.equals(user?.profile._id)) { %>
             <a href="/posts/<%= post._id %>/edit"><button>edit</button></a>
+            <form action="/posts/<%= post._id %>?_method=DELETE"method='POST'>
+              <button type="submit">X</button>
+            </form>
           <% } %>
         </li>
       <% }) %>
