@@ -29,8 +29,8 @@
           <h3><%= post.author.name %></h3>
           <p><%= post.content %></p>
           <button type="button"><a href="/posts/<%= post._id %>">See all replies</a></button>
-          <% if (post.author.equals(user.profile._id)) { %>
-            <button>edit</button>
+          <% if (post.author.equals(user?.profile._id)) { %>
+            <a href="/posts/<%= post._id %>/edit"><button>edit</button></a>
           <% } %>
         </li>
       <% }) %>

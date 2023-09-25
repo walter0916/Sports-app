@@ -1,0 +1,21 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <% if (user?.profile.avatar) { %>
+    <div>
+      <img
+        src="<%= user.profile.avatar %>"
+        alt="<%= user.profile.name %> avatar"
+      />
+    </div>
+  <% } %>
+  <form action="/posts/<%= post._id %>" method="POST">
+    <label for="content-input">Edit Text:</label>
+    <input type="text" name="content" id="content-input" value="<%= post.content %>">
+    <button type="submit">Update Post</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

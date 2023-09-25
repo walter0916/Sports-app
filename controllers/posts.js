@@ -27,6 +27,20 @@ function create(req, res) {
   })
 }
 
+function edit(req, res){
+  Post.findById(req.params.postId)
+  .then(post => {
+    res.render('posts/edit', {
+      post,
+      title: 'Edit Post'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/posts')
+  })
+}
+
 function show(req, res) {
   Post.findById(req.params.postId)
   .populate('author')
@@ -72,5 +86,6 @@ export {
   index,
   create,
   show,
-  createReply
+  createReply,
+  edit
 }
