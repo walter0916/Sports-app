@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <h1>Hello, <%= user ? user.profile.name : "friend" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -22,19 +22,21 @@
       <% } %>
     </section>
     <section class="post-container">
-    <h2>Sports Forum</h2>
+    <h2>Posts</h2>
     <ul>
       <% posts.forEach(post => { %>
         <li class="post">
           <h3><%= post.author.name %></h3>
           <p><%= post.content %></p>
-          <button type="button"><a href="/posts/<%= post._id %>">See all replies</a></button>
-          <% if (post.author.equals(user?.profile._id)) { %>
-            <a href="/posts/<%= post._id %>/edit"><button>edit</button></a>
-            <form action="/posts/<%= post._id %>?_method=DELETE"method='POST'>
-              <button type="submit">X</button>
-            </form>
-          <% } %>
+          <div class="post-buttons"> 
+            <button id="replies-btn" type="button"><a href="/posts/<%= post._id %>">See all replies</a></button>
+            <% if (post.author.equals(user?.profile._id)) { %>
+              <a href="/posts/<%= post._id %>/edit"><button >edit</button></a>
+              <form action="/posts/<%= post._id %>?_method=DELETE"method='POST'>
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </div>
         </li>
       <% }) %>
     </ul>

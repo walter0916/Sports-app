@@ -9,6 +9,7 @@ section.post-container {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   width: 40%;
   border: 5px solid white;
+  justify-content: space-evenly;
 }
 
 post:hover {
@@ -17,20 +18,46 @@ post:hover {
 }
 
 .post {
+  display: flex;
+  flex-direction: column;
   background-color: whitesmoke;
   color: black;
   font-weight: bold;
   width: 400px;
-  margin: 10px 0;
+  height: 150px;
+  margin: 10px;
   border-radius: 5px;
   border: 2px solid black;
   text-align: center;
   margin-right: 35px;
 }
 
+.post-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  flex-direction: row;
+}
+
+a {
+  width:90px
+}
+
+
+
+#replies-btn {
+  width: fit-content;
+}
+
 .post p {
+  flex-grow: 1;
+  display: flex;
   font-size: 14px;
   line-height: 1.6;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
 }
 
 .post a {
@@ -42,6 +69,7 @@ post:hover {
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: bold;
+  align-self: first baseline;
 }
 
 ul {
@@ -67,4 +95,6 @@ ul {
 section.post-form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
