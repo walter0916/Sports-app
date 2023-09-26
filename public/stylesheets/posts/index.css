@@ -1,7 +1,7 @@
 section.post-container {
   display: flex;
   flex-direction: column;
-  background-color: rgb(10, 108, 3);
+  background-color: white;
   margin: auto;
   align-items: center;
   padding: 20px;
@@ -27,10 +27,11 @@ post:hover {
   height: 150px;
   margin: 10px;
   border-radius: 5px;
-  border: 2px solid white;
+  border: 2px solid whitesmoke;
   text-align: center;
   margin-right: 35px;
   position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .post-buttons {
