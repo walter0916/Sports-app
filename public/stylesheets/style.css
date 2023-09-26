@@ -12,21 +12,24 @@ html {
 }
 
 body {
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
+  background-image: url(https://i.imgur.com/D3vepUw.jpg);
+  background-size: cover;
 }
 
 nav {
-  background-color: #f6f6f6;
+  background-color: gray;
   color: #1a1a1a;
   display: flex;
   align-items: center;
   padding: 10px;
   min-height: 60px;
+  border: 2px solid white;
 }
 
 main {
