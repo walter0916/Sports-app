@@ -1,7 +1,7 @@
 section.post-container {
   display: flex;
   flex-direction: column;
-  background-color: #ced4da;
+  background-color: #4f772d;
   margin: auto;
   align-items: center;
   padding: 20px;
@@ -21,7 +21,7 @@ post:hover {
 .post {
   display: flex;
   flex-direction: column;
-  background-color: whitesmoke;
+  background-color: #ecf39e;
   color: black;
   font-weight: bold;
   width: 90%;
@@ -114,5 +114,4 @@ section.post-form {
   align-items: center;
   position: relative;
   padding: 20px;
-  border: 5px solid white;
 }

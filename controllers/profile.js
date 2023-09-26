@@ -7,7 +7,7 @@ function show(req, res) {
     res.render('profiles/show', {
       profile,
       isSelf,
-      title: `${profile.name}'s profile`
+      title: 'your profile'
     })
   })
   .catch(err => {

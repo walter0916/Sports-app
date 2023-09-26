@@ -4,12 +4,13 @@
 </head>
 <body>
   <nav>
-    <a href="/posts">All Posts</a>
+    <a href="/posts" class="<%= title === 'All posts' ? 'active' : ''%>">All Posts</a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
       </a>
-      <a href="/profile/<%= user.profile._id %>">update profile</a>
+      <a href="/profile/<%= user.profile._id %>" 
+        class="<%= title === 'your profile' ? 'active' : ''%>">update profile</a>
     <% } else { %>
       <div 
         id="g_id_onload"

@@ -13,7 +13,8 @@
   <% } %>
   <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
     <label for="content-input">Edit Text:</label>
-    <input type="text" name="content" id="content-input" value="<%= post.content %>">
+   
+    <textarea name="content" id="content-input" cols="30" rows="10"><%= post.content %></textarea>
     <button type="submit">Update Post</button>
   </form>
 </main>
