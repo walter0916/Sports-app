@@ -1,15 +1,16 @@
 section.post-container {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #ced4da;
   margin: auto;
   align-items: center;
   padding: 20px;
   margin-top: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5);
   width: 40%;
   border: 5px solid white;
   justify-content: space-evenly;
+  color: black;
 }
 
 post:hover {
@@ -96,8 +97,9 @@ ul {
   font-size: 14px;
   line-height: 1.5;
   padding: 10px;
-  border: 5px solid black;
+  border: 2px solid black;
   resize: both;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 #textbox:hover {
@@ -110,7 +112,7 @@ section.post-form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(10, 108, 3);
+  position: relative;
   padding: 20px;
   border: 5px solid white;
 }

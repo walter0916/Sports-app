@@ -1,49 +1,45 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/posts/show.css" />
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
-  <section>
-    <h1>Author: <%= post.author.name %></h1>
-    <h1><%= post.content %></h1>
-  </section>
-  <section>
-    <% if (user) { %>
-      <form action="/posts/<%= post._id %>/replies" method="POST">
-        <label for="textbox">Enter Text:</label>
-        <input type="text" name="content" id="textbox">
-        <button type="submit">Post Reply</button>
-      </form>
-    <% } %>
-  </section>
-  <section>
-    <% if (post.replies.length) { %>
-      <ul>
-        <% post.replies.forEach(reply => { %>
-          <li>
-            <h3>reply by <%= reply.author.name %></h3>
-            <p><%= reply.content %></p>
-            <% if (reply.author.equals(user?.profile._id)) { %>
-              <a href="/posts/<%= post._id %>/replies/<%= reply._id %>/edit"><button>edit</button></a>
-              <form action="/posts/<%= post._id %>/replies/<%= reply._id %>/?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-            <% } %>
-          </li>
-        <% }) %>
-      </ul>
-    <% } else { %>
-      <h3>Be the first to reply</h2>
-    <% } %>    
-  </section>
+  <div class="post-reply-container">
+    <section class="post">
+      <h3><img class="post author"
+        src="<%= post.author.avatar %>"
+        alt="<%= post.author.name %> avatar"
+      /></h3>
+      <p><%= post.content %> @ <%= post.author.name %></p>
+    </section>
+    <section>
+      <% if (user) { %>
+        <form action="/posts/<%= post._id %>/replies" method="POST">
+          <input type="text" name="content" id="textbox" value="Enter text here">
+          <button type="submit">Post Reply</button>
+        </form>
+      <% } %>
+    </section>
+    <section>
+      <% if (post.replies.length) { %>
+        <ul>
+          <% post.replies.forEach(reply => { %>
+            <li class="reply-container">
+              <h3>@<%= reply.author.name %></h3>
+              <p><%= reply.content %></p>
+              <% if (reply.author.equals(user?.profile._id)) { %>
+                <a href="/posts/<%= post._id %>/replies/<%= reply._id %>/edit"><button>edit</button></a>
+                <form action="/posts/<%= post._id %>/replies/<%= reply._id %>/?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
+              <% } %>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <h3>Be the first to reply</h2>
+      <% } %>    
+    </section>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
