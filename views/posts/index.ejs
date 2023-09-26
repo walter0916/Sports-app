@@ -12,12 +12,11 @@
       />
     </div>
     <% } %>
-    <section>
+    <section class="post-form">
       <% if (user) { %>
         <h2>Add a post</h2>
         <form action="/posts" method="POST">
-          <label for="textbox">Enter Text:</label>
-          <input type="text" name="content" id="textbox">
+          <textarea name="content" id="textbox" cols="30" rows="10">Enter text here</textarea>
           <button type="submit"> Post </button>
         </form>     
       <% } %>

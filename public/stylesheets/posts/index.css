@@ -12,7 +12,7 @@ section.post-container {
 }
 
 post:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slightly lift on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Slightly lift on hover */
   transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -46,4 +46,25 @@ post:hover {
 
 ul {
   list-style: none;
+}
+
+#textbox {
+  width: 300px;
+  height: 100px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px;
+  border: 1px solid #ccc;
+  resize: both;
+}
+
+#textbox:hover {
+  border-color: #999;
+  background-color: #f5f5f5;
+}
+
+section.post-form {
+  display: flex;
+  flex-direction: column;
 }
