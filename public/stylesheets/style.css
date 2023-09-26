@@ -27,9 +27,23 @@ nav {
   color: #1a1a1a;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   padding: 10px;
   min-height: 60px;
   border: 2px solid white;
+}
+
+nav > a {
+  margin: 1px;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: #424748;
 }
 
 main {
