@@ -26,7 +26,14 @@
     <ul>
       <% posts.forEach(post => { %>
         <li class="post">
-          <h3><%= post.author.name %></h3>
+          <h3><%= post.author.name %>
+            <a href="/profile/<%= post.author.id %>">
+              <img class="post author"
+                src="<%= post.author.avatar %>"
+                alt="<%= post.author.name %> avatar"
+              />
+            </a>
+          </h3>
           <p><%= post.content %></p>
           <div class="post-buttons"> 
             <button id="replies-btn" type="button"><a href="/posts/<%= post._id %>">See all replies</a></button>

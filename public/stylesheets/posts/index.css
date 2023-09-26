@@ -23,20 +23,22 @@ post:hover {
   background-color: whitesmoke;
   color: black;
   font-weight: bold;
-  width: 400px;
+  width: 90%;
   height: 150px;
   margin: 10px;
   border-radius: 5px;
   border: 2px solid black;
   text-align: center;
   margin-right: 35px;
+  position: relative;
 }
 
 .post-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 5px;
   flex-direction: row;
+  background-color: #999;
 }
 
 a {
@@ -57,7 +59,6 @@ a {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
 }
 
 .post a {
@@ -70,6 +71,16 @@ a {
   margin-bottom: 10px;
   font-weight: bold;
   align-self: first baseline;
+}
+
+.post h3 img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  align-items: first baseline;
 }
 
 ul {

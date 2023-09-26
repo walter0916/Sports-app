@@ -2,15 +2,17 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
+  <% if (user.profile.equals(profile)) { %>
+    <h1>Hello, <%= profile.name %></h1>
+    <% } else { %>
+      <h1><%= profile.name %>'s Profile</h1>
+  <% } %>
     <div>
       <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
+        src="<%= profile.avatar %>"
+        alt="<%= profile.name %> avatar"
       />
     </div>
-  <% } %>
   <section>
     <% if (profile.favoriteplayer.length) { %>
       <h1>Favorite players</h1>
