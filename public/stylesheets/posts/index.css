@@ -1,0 +1,49 @@
+section.post-container {
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  margin: auto;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 40%;
+  border: 5px solid white;
+}
+
+post:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slightly lift on hover */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.post {
+  background-color: whitesmoke;
+  color: black;
+  font-weight: bold;
+  width: 400px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 2px solid black;
+  text-align: center;
+  margin-right: 35px;
+}
+
+.post p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.post a {
+  color: #007bff; 
+  text-decoration: underline;
+}
+
+.post h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}

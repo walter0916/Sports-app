@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/posts/index.css" />
 <%- include('../partials/nav') %>
 
 <main>
@@ -21,11 +22,11 @@
         </form>     
       <% } %>
     </section>
-    <section>
+    <section class="post-container">
     <h2>Sports Forum</h2>
     <ul>
       <% posts.forEach(post => { %>
-        <li>
+        <li class="post">
           <h3><%= post.author.name %></h3>
           <p><%= post.content %></p>
           <button type="button"><a href="/posts/<%= post._id %>">See all replies</a></button>
