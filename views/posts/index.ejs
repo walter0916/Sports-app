@@ -25,7 +25,8 @@
             </a>
           </h3>
           <p><%= post.content %> - <small><%= post.author.name %></small></p>
-          <div class="post-buttons"> 
+          <p><small><%= post.createdAt %></small></p>
+          <footer class="post-buttons"> 
             <button id="replies-btn" type="button"><a href="/posts/<%= post._id %>">See all replies</a></button>
             <% if (post.author.equals(user?.profile._id)) { %>
               <a href="/posts/<%= post._id %>/edit"><button >edit</button></a>
@@ -33,7 +34,7 @@
                 <button type="submit">X</button>
               </form>
             <% } %>
-          </div>
+            </footer>
         </li>
       <% }) %>
     </ul>

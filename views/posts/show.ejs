@@ -14,7 +14,7 @@
     <section>
       <% if (user) { %>
         <form action="/posts/<%= post._id %>/replies" method="POST">
-          <input type="text" name="content" id="textbox" value="Enter text here">
+          <textarea name="content" id="textbox" cols="30" rows="10">Enter Reply here</textarea>
           <button type="submit">Post Reply</button>
         </form>
       <% } %>
