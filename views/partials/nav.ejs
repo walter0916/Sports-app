@@ -5,6 +5,7 @@
 <body>
   <nav>
     <a href="/posts" class="<%= title === 'All posts' ? 'active' : ''%>">All Posts</a>
+    <a href="/" class="<%= title === 'Home Page' ? 'active' : '' %>">Home</a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
