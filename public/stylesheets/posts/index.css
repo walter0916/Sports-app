@@ -11,6 +11,7 @@ section.post-container {
   border: 5px solid white;
   justify-content: space-evenly;
   color: black;
+  border-radius: 20px;
 }
 
 post:hover {
@@ -32,7 +33,12 @@ post:hover {
   text-align: center;
   margin-right: 35px;
   position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+  margin-bottom: 40px;
+}
+
+.post:hover {
+  background-color: white;
 }
 
 .post-buttons {

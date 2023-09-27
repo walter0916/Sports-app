@@ -6,14 +6,13 @@
     <section class="post-container">
       <% if (user) { %>
         <section class="post-form">
-          <h2>Add a post</h2>
           <form action="/posts" method="POST">
             <textarea name="content" id="textbox" cols="30" rows="10">Enter text here</textarea>
             <button type="submit"> Post </button>
           </form>     
         </section>
       <% } %>
-    <h2>Posts</h2>
+    <h2>Recent Posts</h2>
     <ul>
       <% posts.forEach(post => { %>
         <li class="post">
