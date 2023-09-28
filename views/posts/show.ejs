@@ -27,7 +27,6 @@
               <section class="reply-container">
                 <div class="card-body">
                   <h4 class="card-title">Recent replies</h4>
-                  <h6 class="card-subtitle">Latest Comments section by users</h6>
                 </div>
                 <!-- <ul> -->
                   <div class="comment-widgets m-b-20">
@@ -40,12 +39,11 @@
                             <h5><%= reply.author.name %></h5>
                             <div class="comment-footer">
                               <span class="date"><%= `${reply.createdAt.toLocaleDateString()} ${reply.createdAt.toLocaleTimeString()}`; %></span>
-                              <span class="action-icons">
-                                <i class="fa fa-pencil"></i>
-                                <i class="fa fa-heart"></i>
+                              <span class="action-icons">                  
+                                <button><i class="fa fa-heart"></i></button>
                             <% if (reply.author.equals(user?.profile._id)) { %>
                               <section class="reply-buttons">
-                                <a href="/posts/<%= post._id %>/replies/<%= reply._id %>/edit"><button>edit</button></a>
+                                <a href="/posts/<%= post._id %>/replies/<%= reply._id %>/edit"><i class="fa fa-pencil"></i></a>
                                 <form action="/posts/<%= post._id %>/replies/<%= reply._id %>/?_method=DELETE" method="POST">
                                   <button type="submit">X</button>
                                 </form>
