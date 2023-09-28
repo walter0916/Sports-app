@@ -4,44 +4,72 @@
 
 <main>
   <div class="post-reply-container">
-    <section class="post">
-      <h3><img class="post author"
-        src="<%= post.author.avatar %>"
-        alt="<%= post.author.name %> avatar"
-      /></h3>
-      <p><%= post.content %> - <%= post.author.name %></p>
-    </section>
-    <section>
-      <% if (user) { %>
-        <form action="/posts/<%= post._id %>/replies" method="POST">
-          <textarea name="content" id="textbox" cols="30" rows="10">Enter Reply here</textarea>
-          <button type="submit">Post Reply</button>
-        </form>
-      <% } %>
-    </section>
-    <section>
-      <% if (post.replies.length) { %>
-        <ul>
-          <% post.replies.forEach(reply => { %>
-            <li class="reply-container">
-              <h3><%= reply.author.name %></h3>
-              <p><%= reply.content %></p>
-              <% if (reply.author.equals(user?.profile._id)) { %>
-                <section class="reply-buttons">
-                  <a href="/posts/<%= post._id %>/replies/<%= reply._id %>/edit"><button>edit</button></a>
-                  <form action="/posts/<%= post._id %>/replies/<%= reply._id %>/?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                  </form>
-                </section>
+    <div class="container d-flex justify-content-center mt-100 mb-100">
+      <div class="row">
+        <div class="col-md-12">
+          <section class="card">
+            <section class="post">
+              <h3><img class="post author"
+                src="<%= post.author.avatar %>"
+                alt="<%= post.author.name %> avatar"
+              /></h3>
+              <p><%= post.content %> - <%= post.author.name %></p>
+            </section>
+            <section class="reply-form">
+              <% if (user) { %>
+                <form action="/posts/<%= post._id %>/replies" method="POST">
+                  <textarea name="content" id="textbox" cols="30" rows="10">Enter Reply here</textarea>
+                  <button type="submit">Post Reply</button>
+                </form>
               <% } %>
-            </li>
-          <% }) %>
-        </ul>
-      <% } else { %>
-        <h3>Be the first to reply</h2>
-      <% } %>    
-    </section>
-  </div>
+            </section>
+            <% if (post.replies.length) { %>
+              <section class="reply-container">
+
+                <div class="card-body">
+                  <h4 class="card-title">Recent replies</h4>
+                  <h6 class="card-subtitle">Latest Comments section by users</h6>
+                </div>
+                <!-- <ul> -->
+                  <div class="comment-widgets m-b-20">
+                    <% post.replies.forEach(reply => { %>
+                      <div class="d-flex flex-row comment-row">
+                        <!-- <li class="reply-container"> -->
+                          <div class="p-2"><span class="round"><img src="<%= reply.author.avatar %>" alt="<%= reply.author.name %>" width="50"></span></div>
+                          <div class="comment-text w-100">
+                            <h5><%= reply.author.name %></h5>
+                            <div class="comment-footer">
+                              <span class="date"><%= `${reply.createdAt.toLocaleDateString()} ${reply.createdAt.toLocaleTimeString()}`; %></span>
+                              <span class="action-icons">
+                                <i class="fa fa-pencil"></i>
+                                <i class="fa fa-rotate-right"></i>
+                            <i class="fa fa-heart"></i>
+                            <% if (reply.author.equals(user?.profile._id)) { %>
+                              <section class="reply-buttons">
+                                <a href="/posts/<%= post._id %>/replies/<%= reply._id %>/edit"><button>edit</button></a>
+                                <form action="/posts/<%= post._id %>/replies/<%= reply._id %>/?_method=DELETE" method="POST">
+                                  <button type="submit">X</button>
+                                </form>
+                              </section>
+                              <% } %>
+                            </span>
+                            <p class="m-b-5 m-t-10"><%= reply.content %></p>
+                          </div>
+                        </div>
+                        <!-- </li> -->
+                      </div>
+                      <% }) %>
+                      <!-- </ul> -->
+                      <% } else { %>
+                        <h3>Be the first to reply</h2>
+                          <% } %>    
+                        </section>
+                    </div>
+                  </section>
+                </div>
+                </div>
+              </div>
+            </div>
 </main>
 
 <%- include('../partials/footer') %>
