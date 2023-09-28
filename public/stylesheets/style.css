@@ -18,12 +18,13 @@ body {
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
-  background-image: url(https://i.imgur.com/D3vepUw.jpg);
+  /* background-image: url(https://i.imgur.com/D3vepUw.jpg); */
+  background-image: url("https://i.imgur.com/xlohf2v.jpg");
   background-size: cover;
 }
 
 nav {
-  background-color: #bacdb0;
+  background-color: white;
   color: #1a1a1a;
   display: flex;
   align-items: center;
