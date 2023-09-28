@@ -13,7 +13,7 @@
   <% } %>
   <form action="/posts/<%= post._id %>/replies/<%= reply._id %>/?_method=PUT"method="POST">
     <label for="content-input">Edit text:</label>
-    <input type="text" name="content" id="content-input" value="<%= reply.content %>">
+    <textarea name="content" id="content-input" cols="30" rows="10"><%= reply.content %></textarea>
     <button type="submit">Update Reply</button>
 </main>
 
