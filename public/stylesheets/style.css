@@ -83,27 +83,15 @@ main {
   cursor: pointer;
   border: 3px dotted black;
   transition: all 0.6s;
-  background-color: red;
+  background-image: url("https://i.imgur.com/xIJjRI6.jpg");
+  background-size: contain;
 }
 
-
-.icon-wrapper, .project-name {
+.project-name {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.icon-wrapper i {
-  font-size: 100px;
-  color: white;
-  transform: translateY(0px);
-  transition: all 0.6s;
-}
-
-.icon-wrapper {
-  align-self: end;  
-}
-
 .project-name {
   align-self: start;
 }
