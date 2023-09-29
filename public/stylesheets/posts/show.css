@@ -11,7 +11,7 @@ main {
   color: black;
   font-weight: bold;
   width: 50%;
-  height: 200px;
+  height: max-content;
   margin-left: 190px;
   border-radius: 5px;
   border: 2px solid whitesmoke;
@@ -19,7 +19,6 @@ main {
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
-  align-items: center;
 }
 
 .post p {
@@ -30,16 +29,24 @@ main {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-top: 60px;
 }
 
-.post h3 img {
+.post div {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  align-self: first baseline;
+  position: absolute;
+}
+
+.post div img {
   width: 40px;
   height: 40px;
-  position: absolute;
   top: 0px;
   left: 0px;
   margin: 1px;
-  border-radius: 50%;
+  border-radius: 10px;
   align-items: first baseline;
 }
 
@@ -142,4 +149,15 @@ textarea {
 .reply-container {
   background-color: white;
   margin-top: 20px;
+}
+
+.author {
+  top: -15px;
+  left: 50px;
+  position: absolute;
+}
+
+.time {
+  margin-top: -20px;
+  margin-left: 50px;
 }

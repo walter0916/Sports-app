@@ -9,11 +9,14 @@
         <div class="col-md-12">
           <section class="card">
             <section class="post">
-              <h3><img class="post author"
+              <div class="header"><img class="post-author"
                 src="<%= post.author.avatar %>"
                 alt="<%= post.author.name %> avatar"
-              /></h3>
-              <p><%= post.content %> - <%= post.author.name %></p>
+                />
+                <h5 class="author"><%= post.author.name %></h5>
+                <h6 class="time"><%= `${post.createdAt.toLocaleDateString()} ${post.createdAt.toLocaleTimeString()}` %></h6>
+            </div>
+              <p><%= post.content %></p>
             </section>
             <section class="reply-form">
               <% if (user) { %>
