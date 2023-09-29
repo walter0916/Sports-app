@@ -6,32 +6,33 @@
     <section class="post-container">
       <% if (user) { %>
         <section class="post-form">
-          <form action="/posts" method="POST">
+          <form  class="post-form" action="/posts" method="POST">
             <textarea name="content" id="textbox" cols="30" rows="10">Enter text here</textarea>
-            <button type="submit"> Post </button>
+            <button class="post-button" type="submit"> Post </button>
           </form>     
         </section>
       <% } %>
-    <h2>Recent Posts</h2>
+    <h2 class="container-header">Recently Posted</h2>
     <ul>
       <% posts.forEach(post => { %>
         <li class="post">
-          <h3>
+          <div class="header">
             <a href="/profile/<%= post.author.id %>">
               <img class="post author"
                 src="<%= post.author.avatar %>"
                 alt="<%= post.author.name %> avatar"
               />
             </a>
-          </h3>
-          <p><%= post.content %> - <small><%= post.author.name %></small></p>
-          <p><small><%= post.createdAt %></small></p>
+            <h4 class="author"><%= post.author.name %></h4>
+            <p class="time"><small><%= `${post.createdAt.toLocaleDateString()} ${post.createdAt.toLocaleTimeString()}` %></small></p>
+          </div>
+          <p class="post-content"><%= post.content %></p>
           <footer class="post-buttons"> 
-            <button id="replies-btn" type="button"><a href="/posts/<%= post._id %>">See all replies</a></button>
+            <button id="replies-btn" type="button"><a style="text-decoration:none" href="/posts/<%= post._id %>">Replies: <%= post.replies.length %></a></button>
             <% if (post.author.equals(user?.profile._id)) { %>
-              <a href="/posts/<%= post._id %>/edit"><button >edit</button></a>
+              <a href="/posts/<%= post._id %>/edit"><button id="edit-btn" >Edit</button></a>
               <form action="/posts/<%= post._id %>?_method=DELETE"method='POST'>
-                <button type="submit">X</button>
+                <button id="delete-btn" type="submit">Delete</button>
               </form>
             <% } %>
             </footer>

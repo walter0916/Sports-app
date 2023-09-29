@@ -38,7 +38,7 @@
                           <div class="comment-text w-100">
                             <h5><%= reply.author.name %></h5>
                             <div class="comment-footer">
-                              <span class="date"><%= `${reply.createdAt.toLocaleDateString()} ${reply.createdAt.toLocaleTimeString()}`; %></span>
+                              <span class="date"><%= `${reply.createdAt.toLocaleDateString()} ${reply.createdAt.toLocaleTimeString()}` %></span>
                               <span class="action-icons">                  
                                 <button><i class="fa fa-heart"></i></button>
                             <% if (reply.author.equals(user?.profile._id)) { %>
