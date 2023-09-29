@@ -7,7 +7,7 @@ main {
 .post {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom right , #F87666, #CCFF33);
+  background: linear-gradient(to bottom right , #FFBC42, #CCFF33);
   color: black;
   font-weight: bold;
   width: 50%;
@@ -116,9 +116,10 @@ main {
 }
 
 .card {
-  background-color: #246EB9;
+  background-color: #FF7700;
   color: black;
   padding: 20px;
+  border-radius: 10px;
 }
 ul {
   list-style: none;
