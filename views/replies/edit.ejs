@@ -1,20 +1,14 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/posts/edit.css" />
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
-  <form action="/posts/<%= post._id %>/replies/<%= reply._id %>/?_method=PUT"method="POST">
-    <label for="content-input">Edit text:</label>
-    <textarea name="content" id="content-input" cols="30" rows="10"><%= reply.content %></textarea>
-    <button type="submit">Update Reply</button>
+  <section>
+    <h1><%= title %></h1>
+    <form action="/posts/<%= post._id %>/replies/<%= reply._id %>/?_method=PUT"method="POST">
+      <textarea name="content" id="content-input" cols="30" rows="10"><%= reply.content %></textarea>
+      <button type="submit">Update Reply</button>
+    </section>
 </main>
 
 <%- include('../partials/footer') %>
