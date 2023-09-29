@@ -41,7 +41,7 @@
                           <div class="p-2"><span class="round"><img src="<%= reply.author.avatar %>" alt="<%= reply.author.name %>" width="50"></span>
                           </div>
                           <div class="comment-text w-100">
-                            <h5><%= reply.author.name %></h5>
+                            <h5 class="author"><%= reply.author.name %></h5>
                             <div class="comment-footer">
                               <span class="date"><%= `${reply.createdAt.toLocaleDateString()} ${reply.createdAt.toLocaleTimeString()}` %></span>
                               <span class="action-icons">                  

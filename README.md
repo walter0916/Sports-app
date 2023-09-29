@@ -31,6 +31,8 @@ Im a huge sports fan and I wanted to create an app that is a sports fan dream th
 3. EJS
 4. Mongoose
 5. Node
+6. Passport.js 
+7. Google OAuth
 
 ---
 
