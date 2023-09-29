@@ -10,8 +10,6 @@
 section.post-container {
   display: flex;
   flex-direction: column;
-  /* background-color: #4f772d; */
-  /* background-color: #38b000; */
   background-color: #FF7700;
   margin: auto;
   align-items: center;
@@ -26,14 +24,13 @@ section.post-container {
 }
 
 post:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Slightly lift on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); 
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .post {
   display: flex;
   flex-direction: column;
-  /* background-color: #ecf39e; */
   background: linear-gradient(to bottom right , #FFBC42, #CCFF33);
   color: black;
   font-weight: bold;
@@ -58,8 +55,6 @@ post:hover {
   margin-top: 5px;
   flex-direction: row;
   justify-content: flex-start;
-  /* background-color: #999; */
-  /* background-color: #BD897E; */
 }
 
 a {

@@ -33,11 +33,9 @@
                 <div class="card-body">
                   <h4 class="card-title">Recent replies</h4>
                 </div>
-                <!-- <ul> -->
                   <div class="comment-widgets m-b-20">
                     <% post.replies.forEach(reply => { %>
                       <div class="d-flex flex-row comment-row">
-                        <!-- <li class="reply-container"> -->
                           <div class="p-2"><span class="round"><img src="<%= reply.author.avatar %>" alt="<%= reply.author.name %>" width="50"></span>
                           </div>
                           <div class="comment-text w-100">
@@ -58,10 +56,8 @@
                             <p class="m-b-5 m-t-10"><%= reply.content %></p>
                             </div>
                           </div>
-                        <!-- </li> -->
                       </div>
                       <% }) %>
-                      <!-- </ul> -->
                       <% } else { %>
                         <h3>Be the first to reply</h2>
                           <% } %>    
