@@ -46,10 +46,8 @@ post:hover {
 
 .post-buttons {
   display: flex;
-  justify-content: center;
   margin-top: 5px;
   flex-direction: row;
-  padding: 0;
   justify-content: flex-start;
   /* background-color: #999; */
   /* background-color: #BD897E; */
@@ -61,23 +59,29 @@ a {
 
 #replies-btn {
   width: fit-content;
-  border: none;
-  padding: 0;
-  background: none;
   cursor: pointer;
-  margin-right: -50px;
   margin-left: 10px;
   cursor: pointer;
 }
 
-#edit-btn {
+.replies-btn {
   border: none;
   background: none;
-  margin-right: -50px;
+  cursor: pointer;
+}
+
+#edit-btn {
+  width: fit-content;
+}
+
+.edit-btn {
+  border: none;
+  background: none;
   cursor: pointer;
 }
 
 #delete-btn {
+  width: fit-content;
   border: none;
   background: none;
   cursor: pointer;

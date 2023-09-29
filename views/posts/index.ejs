@@ -28,9 +28,9 @@
           </div>
           <p class="post-content"><%= post.content %></p>
           <footer class="post-buttons"> 
-            <button id="replies-btn" type="button"><a style="text-decoration:none" href="/posts/<%= post._id %>">Replies: <%= post.replies.length %></a></button>
+            <a id="replies-btn" style="text-decoration:none" href="/posts/<%= post._id %>"><button class="replies-btn" type="button">Replies: <%= post.replies.length %></button></a>
             <% if (post.author.equals(user?.profile._id)) { %>
-              <a href="/posts/<%= post._id %>/edit"><button id="edit-btn" >Edit</button></a>
+              <a id="edit-btn" href="/posts/<%= post._id %>/edit"><button class="edit-btn" >Edit</button></a>
               <form action="/posts/<%= post._id %>?_method=DELETE"method='POST'>
                 <button id="delete-btn" type="submit">Delete</button>
               </form>
