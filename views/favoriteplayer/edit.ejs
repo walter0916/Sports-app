@@ -3,17 +3,9 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
   <section>
-    <form action="/profile/<%= user.profile._id %>/favoriteplayer/<%= player._id %>/?_method=PUT" method="POST">
+    <h1><%= title %></h1>
+    <form class="edit-form" action="/profile/<%= user.profile._id %>/favoriteplayer/<%= player._id %>/?_method=PUT" method="POST">
     <label for="name-input">Name:</label>
     <input type="text" name="name" id="name-input" value="<%= player.name %>">
     <label for="sport">Sport:</label>

@@ -1,5 +1,5 @@
 .profile {
-  background-color: #bacdb0;
+  background-color: #FF7700;
   max-width: 360px;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ img {
 .profile-details {
   display: flex;
   flex-direction: row;
-  background-color: #4f772d;
+  background-color: #FF7700;
   align-items: flex-start;
   justify-content: space-evenly;
   padding: 20px;
@@ -51,7 +51,8 @@ h1.players-header {
   justify-content: center;
   width: max-content;
   text-align: center;
-  margin-left: 80px
+  margin-left: 80px;
+  color: black;
 }
 
 h1.team-header {
@@ -60,6 +61,7 @@ h1.team-header {
   width: max-content;
   margin-left: 80px;
   margin-top: 1px;
+  color: black;
 }
 
 .addplayers-button {

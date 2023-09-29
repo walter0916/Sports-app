@@ -3,10 +3,14 @@ form {
   grid-template-columns: auto auto;
   grid-gap: 16px;
   margin-bottom: 20px;
-  background-color: rgb(10, 108, 3);
+  background-color: #FF7700;
   padding: 20px;
   border: 2px solid white;
   margin-top: 20px;
+  color: #000000;
+  height: 500px;
+  width: 360%;
+  margin-left: -300px;
 }
 
 form * {
@@ -20,4 +24,22 @@ form > button {
   width: 160px;
   grid-column: 2 / 3;
   margin-bottom: 24px;
+  cursor: pointer;
+}
+
+form > button:hover {
+  color: #FF7700;
+  background-color: greenyellow;
+}
+
+h1 {
+  color: #000000;
+  background-color: #FF7700;
+  height: 70px;
+  padding: 20px;
+}
+
+.edit-form {
+  width: 600%;
+  margin-left: -320px;
 }
